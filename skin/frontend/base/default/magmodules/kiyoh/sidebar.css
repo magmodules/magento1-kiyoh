@@ -1,0 +1,181 @@
+/*
+ * Magmodules.eu - http://www.magmodules.eu
+ *
+ * NOTICE OF LICENSE
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to info@magmodules.eu so we can send you a copy immediately.
+ *
+ * @category      Magmodules
+ * @package       Magmodules_Kiyoh
+ * @author        Magmodules <info@magmodules.eu)
+ * @copyright     Copyright (c) 2017 (http://www.magmodules.eu)
+ * @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+.kiyoh-sidebar-block {
+    padding: 10px;
+}
+
+.kiyoh-sidebar-block .rating-name {
+    font-style: italic;
+    vertical-align: middle;
+}
+
+img.kiyoh-logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.kiyoh-sidebar-block .rating-empty {
+    float: right;
+    display: block;
+    width: 80px;
+    height: 16px;
+    background: url('./images/star.png') 0 -16px;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-1 {
+    float: left;
+    display: block;
+    width: 8px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-2 {
+    float: left;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-3 {
+    float: left;
+    display: block;
+    width: 24px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-4 {
+    float: left;
+    display: block;
+    width: 32px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-5 {
+    float: left;
+    display: block;
+    width: 40px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-6 {
+    float: left;
+    display: block;
+    width: 48px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-7 {
+    float: left;
+    display: block;
+    width: 56px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-8 {
+    float: left;
+    display: block;
+    width: 64px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-9 {
+    float: left;
+    display: block;
+    width: 72px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/*noinspection ALL*/
+.kiyoh-sidebar-block .rating-star-10 {
+    float: left;
+    display: block;
+    width: 80px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+/** big review stars **/
+/*noinspection ALL*/
+.block-content p.company-name {
+    text-align: center;
+    margin: 5px auto;
+    font-size: 12px;
+}
+
+.total-block-text {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.total-block-text p {
+    text-align: center;
+    padding-top: 5px;
+    margin-bottom: 2px;
+    font-size: 18px;
+}
+
+.total-block-text p.based-on {
+    text-align: center;
+    font-size: 11px;
+    font-style: italic;
+}
+
+.total-block-stars {
+    height: 34px;
+    width: 188px;
+    background: url('./images/5-stars-empty.png') no-repeat;
+    margin: 5px auto;
+    background-size: auto;
+}
+
+.total-block-stars span {
+    display: block;
+    height: 50px;
+    background: url('./images/5-stars-full.png') no-repeat;
+}

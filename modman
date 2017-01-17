@@ -1,0 +1,23 @@
+app/code/local/Magmodules/Kiyoh            app/code/local/Magmodules/Kiyoh
+app/etc/modules/Magmodules_Kiyoh.xml            app/etc/modules/Magmodules_Kiyoh.xml
+app/locale/en_US/Magmodules_Kiyoh.csv            app/locale/en_US/Magmodules_Kiyoh.csv
+app/locale/nl_NL/Magmodules_Kiyoh.csv            app/locale/nl_NL/Magmodules_Kiyoh.csv
+app/design/adminhtml/default/default/layout/magmodules_kiyoh.xml            app/design/adminhtml/default/default/layout/magmodules_kiyoh.xml
+app/design/frontend/base/default/layout/magmodules_kiyoh.xml            app/design/frontend/base/default/layout/magmodules_kiyoh.xml
+app/design/frontend/base/default/template/magmodules/kiyoh/index.phtml            app/design/frontend/base/default/template/magmodules/kiyoh/index.phtml
+app/design/frontend/base/default/template/magmodules/kiyoh/sidebar/left.phtml            app/design/frontend/base/default/template/magmodules/kiyoh/sidebar/left.phtml
+app/design/frontend/base/default/template/magmodules/kiyoh/sidebar/right.phtml            app/design/frontend/base/default/template/magmodules/kiyoh/sidebar/right.phtml
+app/design/frontend/base/default/template/magmodules/kiyoh/widget/custom.phtml            app/design/frontend/base/default/template/magmodules/kiyoh/widget/custom.phtml
+app/design/frontend/base/default/template/magmodules/kiyoh/widget/richsnippets.phtml            app/design/frontend/base/default/template/magmodules/kiyoh/widget/richsnippets.phtml
+skin/adminhtml/default/default/magmodules/kiyoh/grid.css            skin/adminhtml/default/default/magmodules/kiyoh/grid.css
+skin/adminhtml/default/default/magmodules/kiyoh/star.png            skin/adminhtml/default/default/magmodules/kiyoh/star.png
+skin/frontend/base/default/magmodules/kiyoh/images/5-stars-empty.png            skin/frontend/base/default/magmodules/kiyoh/images/5-stars-empty.png
+skin/frontend/base/default/magmodules/kiyoh/images/5-stars-full.png            skin/frontend/base/default/magmodules/kiyoh/images/5-stars-full.png
+skin/frontend/base/default/magmodules/kiyoh/images/bkg_rating.gif            skin/frontend/base/default/magmodules/kiyoh/images/bkg_rating.gif
+skin/frontend/base/default/magmodules/kiyoh/images/greystar.png            skin/frontend/base/default/magmodules/kiyoh/images/greystar.png
+skin/frontend/base/default/magmodules/kiyoh/images/logo.png            skin/frontend/base/default/magmodules/kiyoh/images/logo.png
+skin/frontend/base/default/magmodules/kiyoh/images/star.png            skin/frontend/base/default/magmodules/kiyoh/images/star.png
+skin/frontend/base/default/magmodules/kiyoh/richsnippets.css            skin/frontend/base/default/magmodules/kiyoh/richsnippets.css
+skin/frontend/base/default/magmodules/kiyoh/sidebar.css            skin/frontend/base/default/magmodules/kiyoh/sidebar.css
+skin/frontend/base/default/magmodules/kiyoh/style.css            skin/frontend/base/default/magmodules/kiyoh/style.css
+

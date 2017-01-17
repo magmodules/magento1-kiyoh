@@ -1,0 +1,154 @@
+<?php
+/**
+ * Magmodules.eu - http://www.magmodules.eu
+ *
+ * NOTICE OF LICENSE
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to info@magmodules.eu so we can send you a copy immediately.
+ *
+ * @category      Magmodules
+ * @package       Magmodules_Kiyoh
+ * @author        Magmodules <info@magmodules.eu)
+ * @copyright     Copyright (c) 2017 (http://www.magmodules.eu)
+ * @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+    $reviews = $this->getReviews();
+    $stats = $this->getStats();
+?>
+<div class="kiyoh">
+    <div class="page-title">
+        <h1><?php echo $this->__('Kiyoh'); ?></h1>
+        <?php if (Mage::getStoreConfig('kiyoh/general/url')): ?>
+            <button class="button" onclick="setLocation('<?php echo Mage::getStoreConfig('kiyoh/general/url'); ?>')">
+				<span>
+					<span>
+						<?php echo $this->__('Write review'); ?>
+					</span>
+				</span>
+            </button>
+        <?php endif; ?>
+    </div>
+
+    <?php if ($reviews->getSize()): ?>
+        <div class="content-kiyoh">
+            <div class="about-kiyoh">
+                <?php echo nl2br(Mage::getStoreConfig('kiyoh/overview/intro')); ?>
+            </div>
+        </div>
+        <?php $i = 0;
+        foreach ($reviews as $review): ?>
+            <div class="review-list">
+                <div class="review-header">
+                    <h3><?php echo $review->getCustomerName(); ?>
+                        - <?php echo Mage::helper('core')->formatDate($review->getDateCreated(), 'long', false); ?>
+                        - <?php echo $review->getCustomerPlace(); ?> </h3>
+                    <?php if ($review->getScore()): ?>
+                        <ul class="overall">
+                            <li>
+                                <span class="rating-empty"><span
+                                            class="rating-star-<?php echo $review->getScore(); ?>"></span></span>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
+                </div>
+                <ul class="experience">
+                    <li>
+                        <?php if ($review->getPositive()): ?>
+                            <strong><?php echo $this->__('Positive'); ?>:</strong>
+                            <p><?php echo nl2br($review->getPositive()); ?></p>
+                        <?php endif; ?>
+
+                        <?php if ($review->getNegative()): ?>
+                            <strong><?php echo $this->__('Suggestions'); ?>:</strong>
+                            <p><?php echo nl2br($review->getNegative()); ?></p>
+                        <?php endif; ?>
+
+                        <strong><?php echo $this->__('Recommend'); ?>:</strong>
+                        <?php
+                        if ($review->getRecommendation() == '1') {
+                            echo $this->__('Yes');
+                        } else {
+                            echo $this->__('No');
+                        }
+                        ?>
+                    </li>
+                </ul>
+                <ul class="summary-index">
+                    <?php if ($review->getScoreQ2() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ2Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ2(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ3() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ3Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ3(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ4() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ4Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ4(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ5() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ5Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ5(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ6() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ6Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ6(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ7() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ7Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ7(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ8() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ8Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ8(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ9() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ9Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ9(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($review->getScoreQ10() > 0): ?>
+                        <li>
+                            <span class="rating-name"><?php echo $stats->getScoreQ10Title(); ?></span>
+                            <span class="rating-empty"><span
+                                        class="rating-greystar-<?php echo $review->getScoreQ10(); ?>"></span></span>
+                        </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            <?php $i++; endforeach; ?>
+        <?php echo $this->getPagerHtml(); ?>
+    <?php else: ?>
+        <p class="note-msg"><?php echo $this->__('No reviews found...'); ?></p>
+    <?php endif ?>
+</div>

@@ -1,0 +1,608 @@
+<?xml version="1.0"?>
+<!--
+  ~ Magmodules.eu - http://www.magmodules.eu
+  ~
+  ~ NOTICE OF LICENSE
+  ~ This source file is subject to the Open Software License (OSL 3.0)
+  ~ that is bundled with this package in the file LICENSE.txt.
+  ~ It is also available through the world-wide-web at this URL:
+  ~ http://opensource.org/licenses/osl-3.0.php
+  ~ If you did not receive a copy of the license and are unable to
+  ~ obtain it through the world-wide-web, please send an email
+  ~ to info@magmodules.eu so we can send you a copy immediately.
+  ~
+  ~ @category      Magmodules
+  ~ @package       Magmodules_Kiyoh
+  ~ @author        Magmodules <info@magmodules.eu)
+  ~ @copyright     Copyright (c) 2017 (http://www.magmodules.eu)
+  ~ @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+  -->
+<config>
+    <tabs>
+        <magmodules translate="label" module="kiyoh">
+            <label>Magmodules</label>
+            <sort_order>200</sort_order>
+        </magmodules>
+    </tabs>
+    <sections>
+        <kiyoh translate="label" module="kiyoh">
+            <label>KiyOh Connect</label>
+            <tab>magmodules</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>40</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <info>
+                    <frontend_model>kiyoh/adminhtml_widget_info_info</frontend_model>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </info>
+                <general translate="label" module="kiyoh">
+                    <label>General configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <comment>
+                        <![CDATA[
+							<script>
+								Event.observe(window, 'load', function() {
+									if ($('kiyoh_reviews_lastrun')) {
+										$('kiyoh_reviews_lastrun').style.backgroundColor='#f0f0f0';
+										$('kiyoh_reviews_lastrun').disable();
+									}
+									if ($('kiyoh_general_url')) {
+										$('kiyoh_general_url').style.backgroundColor='#f0f0f0';
+										$('kiyoh_general_url').disable();
+									}	
+									if ($('kiyoh_general_company')) {
+										$('kiyoh_general_company').style.backgroundColor='#f0f0f0';
+										$('kiyoh_general_company').disable();
+									}										
+								});
+							</script>
+						]]>
+                    </comment>
+                    <fields>
+                        <version translate="label">
+                            <label>Extension Version</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>kiyoh/adminhtml_widget_field_version</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </version>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>kiyoh/system_config_flushcache</backend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <heading_api translate="label">
+                            <label>API CREDENTIALS</label>
+                            <frontend_model>kiyoh/adminhtml_widget_form_heading</frontend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_api>
+                        <api_url translate="label">
+                            <label>Localisation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>kiyoh/system_config_source_kiyoh</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </api_url>
+                        <api_id translate="label">
+                            <label>Company ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </api_id>
+                        <api_key translate="label">
+                            <label>Connector Code</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>You can find this information in your Kiyoh account</tooltip>
+                        </api_key>
+                        <heading_company translate="label">
+                            <label>Company Import</label>
+                            <frontend_model>kiyoh/adminhtml_widget_form_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_company>
+                        <company translate="label">
+                            <label>Company</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </company>
+                        <url translate="label">
+                            <label>Url</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </url>
+                    </fields>
+                </general>
+                <reviews translate="label" module="kiyoh">
+                    <label>Kiyoh Import Reviews</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <cron translate="label">
+                            <label>Use Cronjob</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cron>
+                        <cron_stats translate="label">
+                            <label>Update Summary</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>kiyoh/system_config_source_cronfrequency</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <cron>1</cron>
+                            </depends>
+                        </cron_stats>
+                        <cron_reviews translate="label">
+                            <label>Update Reviews</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>kiyoh/system_config_source_cronfrequency</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <cron>1</cron>
+                            </depends>
+                        </cron_reviews>
+                        <cron_all translate="label">
+                            <label>Update Review History</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>kiyoh/system_config_source_cronfrequency</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <cron>1</cron>
+                            </depends>
+                        </cron_all>
+                        <lastrun translate="label">
+                            <label>Last Update</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </lastrun>
+                        <process translate="label">
+                            <label>Process Manually</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>kiyoh/adminhtml_widget_buttons_process</frontend_model>
+                            <sort_order>101</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </process>
+                    </fields>
+                </reviews>
+                <sidebar translate="label">
+                    <label>KiyOh Reviews Sidebar</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <left_heading translate="label">
+                            <label>Left Sidebar</label>
+                            <frontend_model>kiyoh/adminhtml_widget_form_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </left_heading>
+                        <left translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </left>
+                        <left_qty translate="label">
+                            <label>Number of Reviews</label>
+                            <validate>validate-number</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <left>1</left>
+                            </depends>
+                        </left_qty>
+                        <left_lenght translate="label">
+                            <label>Length of Reviews</label>
+                            <validate>validate-number</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>53</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <left>1</left>
+                            </depends>
+                        </left_lenght>
+                        <left_snippets translate="label">
+                            <label>Add Rich Snippets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>56</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <left>1</left>
+                            </depends>
+                            <comment>When using both sidebars make sure you only activate the Rich Snippets for only one
+                                sidebar
+                            </comment>
+                        </left_snippets>
+                        <left_link translate="label">
+                            <label>Link to</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>kiyoh/system_config_source_sidebarlink</source_model>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <left>1</left>
+                            </depends>
+                        </left_link>
+                        <right_heading translate="label">
+                            <label>Right Sidebar</label>
+                            <frontend_model>kiyoh/adminhtml_widget_form_heading</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </right_heading>
+                        <right translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>61</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </right>
+                        <right_qty translate="label">
+                            <label>Number of Reviews</label>
+                            <validate>validate-number</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>62</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <right>1</right>
+                            </depends>
+                        </right_qty>
+                        <right_lenght translate="label">
+                            <label>Length of Reviews</label>
+                            <validate>validate-number</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>63</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <right>1</right>
+                            </depends>
+                        </right_lenght>
+                        <right_link>
+                            <label>Link to</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>kiyoh/system_config_source_sidebarlink</source_model>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <right>1</right>
+                            </depends>
+                        </right_link>
+                        <right_snippets translate="label">
+                            <label>Add Rich Snippets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>66</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <right>1</right>
+                            </depends>
+                            <comment>When using both sidebars make sure you only activate the Rich Snippets for only one
+                                sidebar
+                            </comment>
+                        </right_snippets>
+                    </fields>
+                </sidebar>
+                <overview translate="label">
+                    <label>KiyOh Overview Page</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>6</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <intro translate="lable">
+                            <label>Intro</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </intro>
+                        <enable_paging>
+                            <label>Paging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_paging>
+                        <paging_settings>
+                            <label>Reviews per page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>Comma Separated, as: 10,20,30</tooltip>
+                            <depends>
+                                <enable_paging>1</enable_paging>
+                            </depends>
+                        </paging_settings>
+                        <heading_meta translate="label">
+                            <label>Meta Data</label>
+                            <frontend_model>kiyoh/adminhtml_widget_form_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_meta>
+                        <meta_title translate="lable">
+                            <label>Meta Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </meta_title>
+                        <meta_description translate="lable">
+                            <label>Meta Description</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </meta_description>
+                        <meta_keywords translate="label">
+                            <label>Meta Keywords</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </meta_keywords>
+                    </fields>
+                </overview>
+                <invitation translate="label">
+                    <label>Invitation to write the customer experience</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>7</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Activate</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Send invitation?</comment>
+                            <tooltip>Send customers automatically receive an invitation to share a customer
+                                experience.
+                            </tooltip>
+                        </enabled>
+                        <company_email>
+                            <label>Company Email address</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Use the company email address registered with Kiyoh, this is used as en extra
+                                validation.
+                            </comment>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </company_email>
+                        <status>
+                            <label>Order completed with status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>kiyoh/system_config_source_orderstatus</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                            <comment>Invitation e-mail is sent after such status is achieved</comment>
+                            <tooltip>Specify at which status you want to send the invitation. Default is "Completed"
+                            </tooltip>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </status>
+                        <delay translate="label">
+                            <label>Delay</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Send the invitation x days after the order is completed</comment>
+                            <tooltip>This will ensure that the customer receives the invitation shortly after receiving
+                                the product and not before. This increases the opportunity that the client will share
+                                his experience.
+                            </tooltip>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </delay>
+                        <backlog translate="label">
+                            <label>Maximum Delay</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Change only if necessary</comment>
+                            <tooltip>Number of days to complete order may last, if it takes longer then no invitation
+                                will be sent. Read more about this feature on Kiyoh.nl.
+                            </tooltip>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </backlog>
+                    </fields>
+                </invitation>
+                <log translate="label">
+                    <label>KiyOh Log Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>9</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Log Function</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enabled>
+                        <clean translate="label">
+                            <label>Auto Cleaning</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </clean>
+                        <clean_days translate="label">
+                            <label>Clean after Days</label>
+                            <validate>validate-number</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                        </clean_days>
+                    </fields>
+                </log>
+                <snippets translate="label">
+                    <label>KiyOh Custom Blocks</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <comment>
+                        <![CDATA[<p>The extension comes with two coded blocks.<br>With this blocks you can add  your store rating in a Static block or CMS page.</p><p><br><strong>The Rich Snippets Block.<br></strong>Show your Store-rating with this block and generate results in the Google Search Engine Results better known as Rich Snippets.<br>Paste the code  below at the desired location using a Static Block or a CMS page.</p><p>Code: {{block type="kiyoh/snippets" name="kiyohsnippets"}}</p><p><br><strong>Custom Block.</strong><br>With this block you can create  custom block for footer of header, you can paste the code  below at the desired location using a Static Block or a CMS page.<br>To edit this block you need to edit the .phtml file located in the following path: app/design/frontend/base/default/template/magmodules/kiyoh/widget/custom.phtml</p><p>Code: {{block type="kiyoh/custom" name="kiyoh"}}</p>]]></comment>
+                </snippets>
+            </groups>
+        </kiyoh>
+    </sections>
+</config>

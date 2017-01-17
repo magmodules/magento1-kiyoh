@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<!--
+  ~ Magmodules.eu - http://www.magmodules.eu
+  ~
+  ~ NOTICE OF LICENSE
+  ~ This source file is subject to the Open Software License (OSL 3.0)
+  ~ that is bundled with this package in the file LICENSE.txt.
+  ~ It is also available through the world-wide-web at this URL:
+  ~ http://opensource.org/licenses/osl-3.0.php
+  ~ If you did not receive a copy of the license and are unable to
+  ~ obtain it through the world-wide-web, please send an email
+  ~ to info@magmodules.eu so we can send you a copy immediately.
+  ~
+  ~ @category      Magmodules
+  ~ @package       Magmodules_Kiyoh
+  ~ @author        Magmodules <info@magmodules.eu)
+  ~ @copyright     Copyright (c) 2017 (http://www.magmodules.eu)
+  ~ @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+  -->
+<config>
+    <modules>
+        <Magmodules_Kiyoh>
+            <version>1.1.2</version>
+        </Magmodules_Kiyoh>
+    </modules>
+    <global>
+        <models>
+            <kiyoh>
+                <class>Magmodules_Kiyoh_Model</class>
+                <resourceModel>kiyoh_mysql4</resourceModel>
+            </kiyoh>
+            <kiyoh_mysql4>
+                <class>Magmodules_Kiyoh_Model_Mysql4</class>
+                <entities>
+                    <reviews>
+                        <table>kiyoh_reviews</table>
+                    </reviews>
+                    <stats>
+                        <table>kiyoh_stats</table>
+                    </stats>
+                    <log>
+                        <table>kiyoh_log</table>
+                    </log>
+                </entities>
+            </kiyoh_mysql4>
+        </models>
+        <resources>
+            <kiyoh_setup>
+                <setup>
+                    <module>Magmodules_Kiyoh</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </kiyoh_setup>
+            <kiyoh_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </kiyoh_write>
+            <kiyoh_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </kiyoh_read>
+        </resources>
+        <helpers>
+            <kiyoh>
+                <class>Magmodules_Kiyoh_Helper</class>
+            </kiyoh>
+        </helpers>
+        <blocks>
+            <kiyoh>
+                <class>Magmodules_Kiyoh_Block</class>
+            </kiyoh>
+        </blocks>
+        <events>
+            <sales_order_shipment_save_after>
+                <observers>
+                    <kiyoh>
+                        <type>singleton</type>
+                        <class>kiyoh/observer</class>
+                        <method>processFeedbackInvitationcallAfterShipment</method>
+                    </kiyoh>
+                </observers>
+            </sales_order_shipment_save_after>
+            <sales_order_save_commit_after>
+                <observers>
+                    <kiyoh>
+                        <type>singleton</type>
+                        <class>kiyoh/observer</class>
+                        <method>processFeedbackInvitationcall</method>
+                    </kiyoh>
+                </observers>
+            </sales_order_save_commit_after>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <kiyoh>
+                <use>standard</use>
+                <args>
+                    <module>Magmodules_Kiyoh</module>
+                    <frontName>kiyoh</frontName>
+                </args>
+            </kiyoh>
+        </routers>
+        <layout>
+            <updates>
+                <kiyoh>
+                    <file>magmodules_kiyoh.xml</file>
+                </kiyoh>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <magmodules_kiyoh>
+                    <files>
+                        <default>Magmodules_Kiyoh.csv</default>
+                    </files>
+                </magmodules_kiyoh>
+            </modules>
+        </translate>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <magmodules_kiyoh>
+                    <file>magmodules_kiyoh.xml</file>
+                </magmodules_kiyoh>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <magmodules_kiyoh>
+                    <files>
+                        <default>Magmodules_Kiyoh.csv</default>
+                    </files>
+                </magmodules_kiyoh>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <magmodules_kiyoh after="Mage_Adminhtml">Magmodules_Kiyoh_Adminhtml</magmodules_kiyoh>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <crontab>
+        <jobs>
+            <magmodules_kiyoh_stats>
+                <schedule>
+                    <config_path>kiyoh/reviews/cron_stats</config_path>
+                </schedule>
+                <run>
+                    <model>kiyoh/observer::processStats</model>
+                </run>
+            </magmodules_kiyoh_stats>
+            <magmodules_kiyoh_reviews>
+                <schedule>
+                    <config_path>kiyoh/reviews/cron_reviews</config_path>
+                </schedule>
+                <run>
+                    <model>kiyoh/observer::processReviews</model>
+                </run>
+            </magmodules_kiyoh_reviews>
+            <magmodules_kiyoh_reviewhistory>
+                <schedule>
+                    <config_path>kiyoh/reviews/cron_all</config_path>
+                </schedule>
+                <run>
+                    <model>kiyoh/observer::processHistory</model>
+                </run>
+            </magmodules_kiyoh_reviewhistory>
+            <magmodules_kiyoh_cleanlog>
+                <schedule>
+                    <cron_expr>0 02 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>kiyoh/observer::cleanLog</model>
+                </run>
+            </magmodules_kiyoh_cleanlog>
+        </jobs>
+    </crontab>
+    <default>
+        <kiyoh>
+            <general>
+                <enabled>0</enabled>
+            </general>
+            <reviews>
+                <cron>0</cron>
+                <cron_stats>*/15 * * * *</cron_stats>
+                <cron_reviews>0 */2 * * *</cron_reviews>
+                <cron_all>0 2 0 * *</cron_all>
+            </reviews>
+            <sidebar>
+                <left>0</left>
+                <left_qty>3</left_qty>
+                <left_lenght>150</left_lenght>
+                <left_link>external</left_link>
+                <right>0</right>
+                <right_qty>3</right_qty>
+                <right_lenght>150</right_lenght>
+                <right_link>external</right_link>
+            </sidebar>
+            <snippets>
+                <sidebar>1</sidebar>
+            </snippets>
+            <overview>
+                <enabled>1</enabled>
+                <enable_paging>1</enable_paging>
+                <paging_settings>10,20,30</paging_settings>
+                <meta_title>KiyOh Reviews</meta_title>
+                <meta_description>KiyOh overview page</meta_description>
+                <meta_keywords>reviews, kiyoh</meta_keywords>
+            </overview>
+            <invitation>
+                <enabled>0</enabled>
+                <status>complete</status>
+                <delay>5</delay>
+                <backlog>20</backlog>
+                <remind_delay>0</remind_delay>
+                <resend>1</resend>
+            </invitation>
+            <frontend>
+                <enabled>0</enabled>
+                <tooltip>0</tooltip>
+                <sidebar_position>left</sidebar_position>
+                <sidebar_height>120</sidebar_height>
+            </frontend>
+            <log>
+                <enabled>1</enabled>
+                <clean>1</clean>
+                <clean_days>14</clean_days>
+            </log>
+        </kiyoh>
+    </default>
+</config>
