@@ -18,7 +18,7 @@ KiyOh started in 2009 and is growing fast. Meanwhile, there are already thousand
 
 ## Links
 
-[Knowledgebase](https://www.magmodules.eu/help/webwinkelkeur)
+[Knowledgebase](https://www.magmodules.eu/help/kiyoh)
 
 [Terms and Conditions](https://www.magmodules.eu/terms.html)
 
