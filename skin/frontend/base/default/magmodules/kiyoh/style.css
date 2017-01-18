@@ -17,6 +17,8 @@
  * @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
+.kiyoh {}
+
 .kiyoh h1 {
     float: left;
     width: 50%;
@@ -37,6 +39,17 @@
     text-align: center;
 }
 
+.kiyoh .ratingblock-kiyoh {
+    width: 60px;
+    height: 60px;
+    padding: 4px 0px 0px 3px;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 6px auto;
+    border-radius: 70px;
+    border: 4px solid white;
+    box-shadow: 1px 1px 3px #CCCCCC;
+}
 
 .kiyoh .content-kiyoh {
     overflow: auto;
@@ -75,6 +88,10 @@
     padding: 5px 5px 5px 10px;
 }
 
+.kiyoh ul.summary-index li.head {
+    padding: 10px 5px 5px 5px;
+    border-bottom: 1px dotted #e0e0e0;
+}
 
 .kiyoh ul.experience li {
     width: 100%;
@@ -85,4 +102,205 @@
     font-weight: bold;
     display: block;
     margin-bottom: 2px;
+}
+
+
+/* INDEX REVIEW LIST */
+
+.review-list .rating-empty {
+    float: left;
+    display: block;
+    width: 80px;
+    height: 16px;
+    background: url('./images/star.png') 0 -16px;
+    margin-right: 5px;
+}
+
+.review-list .rating-empty {
+    float: left;
+    display: block;
+    width: 80px;
+    height: 16px;
+    background: url('./images/star.png') 0 -16px;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-1 {
+    float: left;
+    display: block;
+    width: 8px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-2 {
+    float: left;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-3 {
+    float: left;
+    display: block;
+    width: 24px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-4 {
+    float: left;
+    display: block;
+    width: 32px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-5 {
+    float: left;
+    display: block;
+    width: 40px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-6 {
+    float: left;
+    display: block;
+    width: 48px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-7 {
+    float: left;
+    display: block;
+    width: 55px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-8 {
+    float: left;
+    display: block;
+    width: 64px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-9 {
+    float: left;
+    display: block;
+    width: 72px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-star-10 {
+    float: left;
+    display: block;
+    width: 78px;
+    height: 16px;
+    background: url('./images/star.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-1 {
+    float: left;
+    display: block;
+    width: 8px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-2 {
+    float: left;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-3 {
+    float: left;
+    display: block;
+    width: 24px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-4 {
+    float: left;
+    display: block;
+    width: 32px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-5 {
+    float: left;
+    display: block;
+    width: 40px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-6 {
+    float: left;
+    display: block;
+    width: 48px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-7 {
+    float: left;
+    display: block;
+    width: 56px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-8 {
+    float: left;
+    display: block;
+    width: 62px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-9 {
+    float: left;
+    display: block;
+    width: 72px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
+}
+
+.review-list .rating-greystar-10 {
+    float: left;
+    display: block;
+    width: 78px;
+    height: 16px;
+    background: url('./images/greystar.png') 0 0;
+    margin-right: 5px;
 }
