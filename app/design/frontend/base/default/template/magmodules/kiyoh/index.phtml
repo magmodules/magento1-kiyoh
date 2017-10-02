@@ -50,7 +50,7 @@ $i = 0;
                     $date = Mage::helper('core')->formatDate($review->getDateCreated(), 'long', false);;
                     $place = (!empty($review->getCustomerPlace()) ? '- ' . $review->getCustomerPlace() : '');
                     ?>
-                    <h3><?php echo sprintf('%s - %s', $name, $date, $place); ?></h3>
+                    <h3><?php echo sprintf('%s - %s %s', $name, $date, $place); ?></h3>
                     <?php if ($review->getScore()) { ?>
                         <ul class="overall">
                             <li>
