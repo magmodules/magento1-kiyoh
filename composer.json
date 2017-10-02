@@ -1,0 +1,19 @@
+{
+  "name": "magmodules/magento1-kiyoh",
+  "type": "magento-module",
+  "description": "Magento 1 KiyOh integration",
+  "version": "v1.1.3",
+  "keywords": [
+    "magento"
+  ],
+  "homepage": "https://github.com/magmodules/magento1-kiyoh",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Magmodules"
+    }
+  ],
+  "require": {
+    "php": ">5.6.0"
+  }
+}
